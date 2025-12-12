@@ -1,0 +1,18 @@
+const readline = require('readline');
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+});
+
+rl.on("line", (input) => {
+    let [a, b] = input.split(' ');
+    a = Number(a);
+    b = Number(b);
+    if (a > 0 && b < 10) {
+        console.log(a + b);
+        rl.close();
+    }
+}).on("close", function () {
+    process.exit();
+});
